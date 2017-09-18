@@ -36,7 +36,7 @@ namespace Sibala
 
         private void Calculate()
         {
-            if (!CheckSamePoint())
+            if (!IsCheckSamePoint())
             {
                 CheckNormalPoint();
             }
@@ -60,7 +60,7 @@ namespace Sibala
             
         }
 
-        private bool CheckSamePoint()
+        private bool IsCheckSamePoint()
         {
             if (_dicePoints[0] == _dicePoints[3])
             {
