@@ -22,6 +22,7 @@ namespace Sibala
             }
             else
             {
+                //if (sourceObject.type == )
                 return sourceObject.value - targetObject.value;
             }
         }
