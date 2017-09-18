@@ -45,22 +45,19 @@ namespace Sibala
 
         private void CheckNormalPoint()
         {
-            if (_dicePoints[0] == _dicePoints[1])
+
+            for (int i = 0; i < _dicePoints.Count - 2; i++)
             {
-                _sibalaResult = new SibalaResult((SibalaResultType)1, _dicePoints[2] + _dicePoints[3], _dicePoints.Max());
+                if (_dicePoints[i] == _dicePoints[i + 1])
+                {
+                    _sibalaResult = new SibalaResult((SibalaResultType)1, _dicePoints[ (i + 2) % 4] + _dicePoints[(i + 3)%4], _dicePoints.Max());
+                    return;
+                }
             }
-            else if (_dicePoints[1] == _dicePoints[2])
-            {
-                _sibalaResult = new SibalaResult((SibalaResultType)1, _dicePoints[0] + _dicePoints[3], _dicePoints.Max());
-            }
-            else if (_dicePoints[2] == _dicePoints[3])
-            {
-                _sibalaResult = new SibalaResult((SibalaResultType)1, _dicePoints[0] + _dicePoints[1], _dicePoints.Max());
-            }
-            else
-            {
-                _sibalaResult = new SibalaResult((SibalaResultType)0, 0, _dicePoints.Max());
-            }
+
+            
+            _sibalaResult = new SibalaResult((SibalaResultType)0, 0, _dicePoints.Max());
+            
         }
 
         private bool CheckSamePoint()
