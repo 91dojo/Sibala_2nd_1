@@ -70,6 +70,38 @@ namespace Sibala.Tests
         }
 
 
+        [TestMethod]
+        public void CompareTest_OneColorFourCompareOneColorOne_ShouldLessZero()
+        {
+            var source = new SibalaGame(new List<int>() { 4, 4, 4, 4 });
+            var target = new SibalaGame(new List<int>() { 1, 1, 1, 1 });
+
+            var result = Sibala.Compare(source, target);
+            Assert.IsTrue(result < 0);
+        }
+
+
+        [TestMethod]
+        public void CompareTest_OneColorFourCompareOneColorOhters_ShouldGreaterZero()
+        {
+            var source = new SibalaGame(new List<int>() { 4, 4, 4, 4 });
+            var target = new SibalaGame(new List<int>() { 2, 2, 2, 2 });
+
+            var result = Sibala.Compare(source, target);
+            Assert.IsTrue(result > 0);
+        }
+
+        [TestMethod]
+        public void CompareTest_OneColorFiveCompareOneColorOhters_ShouldGreaterZero()
+        {
+            var source = new SibalaGame(new List<int>() { 4, 4, 4, 4 });
+            var target = new SibalaGame(new List<int>() {6,6,6,6});
+
+            var result = Sibala.Compare(source, target);
+            Assert.IsTrue(result > 0);
+        }
+
+
     }
 }
 
