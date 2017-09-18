@@ -5,7 +5,12 @@ using System.Text;
 
 namespace Sibala
 {
-    public class Class1
+    public class Sibala
     {
+        public int Compare(SibalaGame source, SibalaGame target)
+        {
+            
+
+        }
     }
 }

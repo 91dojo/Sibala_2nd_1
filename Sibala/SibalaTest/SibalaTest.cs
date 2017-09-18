@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace SibalaTest
 {
     [TestClass]
-    public class UnitTest1
+    public class SibalaTest
     {
         [TestMethod]
         public void TestMethod1()
