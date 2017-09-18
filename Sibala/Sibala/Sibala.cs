@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Sibala
 {
-    public  class Sibala
+    public class Sibala
     {
         private static Dictionary<int, int> _OneColorOrder = new Dictionary<int, int>
         {
@@ -22,33 +19,21 @@ namespace Sibala
             var sourceObject = source.GetResult();
             var targetObject = target.GetResult();
 
-            if (sourceObject.type > targetObject.type)
+            if (sourceObject.type != targetObject.type)
             {
-                return 1;
+                return sourceObject.type - targetObject.type;
             }
-            else if (sourceObject.type < targetObject.type)
-            {
-                return -1;
-            }
-            else
-            {
-                if (sourceObject.type == SibalaResultType.OneColor)
-                {
-                    // 1 4 6 5 3 2 
-                    var sourceOrder = _OneColorOrder[sourceObject.value];
-                    var targetOrder = _OneColorOrder[targetObject.value];
 
-                    return sourceOrder - targetOrder;
-                }
-                else if (sourceObject.type == SibalaResultType.NormalPoint)
-                {
-                    if (sourceObject.value == targetObject.value)
-                    {
-                        return sourceObject.maxValue - targetObject.maxValue;
-                    }
-                }
-                return sourceObject.value - targetObject.value;
+            if (sourceObject.type == SibalaResultType.OneColor)
+            {
+                return _OneColorOrder[sourceObject.value] - _OneColorOrder[targetObject.value];
             }
+            if (sourceObject.type == SibalaResultType.NormalPoint && sourceObject.value == targetObject.value)
+            {
+                return sourceObject.maxValue - targetObject.maxValue;
+            }
+
+            return sourceObject.value - targetObject.value;
         }
     }
 }
