@@ -5,6 +5,10 @@ using System.Text;
 
 namespace Sibala
 {
+    public enum SibalaResultType
+    {
+        NoPoint = 0
+    }
     public class SibalaGame
     {
         private List<int> _dicePoints;
@@ -17,16 +21,17 @@ namespace Sibala
 
         public SibalaResult GetResult()
         {
-            return new SibalaResult("",5);
+            return new SibalaResult(SibalaResultType.NoPoint, 5);
         }
     }
 
+
     public class SibalaResult
     {
-        public readonly string type;
+        public readonly SibalaResultType type;
         public readonly int value;
 
-        public SibalaResult(string type,int value)
+        public SibalaResult(SibalaResultType type,int value)
         {
             this.type = type;
             this.value = value;
