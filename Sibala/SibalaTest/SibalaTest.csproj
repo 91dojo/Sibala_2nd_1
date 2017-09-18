@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>72a11b91-e72b-4d0c-aaca-44e59820631e</ProjectGuid>
+    <ProjectGuid>{4B5EB92F-1677-4D67-89E6-124442EF15E9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SibalaTest</RootNamespace>
@@ -53,8 +53,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="SibalaTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SibalaTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sibala\Sibala.csproj">
+      <Project>{FFEEF796-3C27-4333-9272-69FBC7F658B2}</Project>
+      <Name>Sibala</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
