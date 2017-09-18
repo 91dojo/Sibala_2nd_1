@@ -38,6 +38,15 @@ namespace Sibala.Tests
         }
 
         [TestMethod]
+        public void SibalaGameTest_TwoPairsTwoSameNumbers_SixPoints()
+        {
+            var target = new SibalaGame(new List<int> { 3, 3, 1, 1 });
+            var result = target.GetResultString();
+
+            Assert.AreEqual("6點", result);
+        }
+
+        [TestMethod]
         public void SibalaGameTest_TwoSameNumbersAndTwoDifferentNumbersSumThree_BG()
         {
             var target = new SibalaGame(new List<int> { 6, 6, 1, 2 });
