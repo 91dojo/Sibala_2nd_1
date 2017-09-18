@@ -15,9 +15,22 @@ namespace Sibala
 
         }
 
-        public object GetResult()
+        public SibalaResult GetResult()
         {
-            return null;
+            return new SibalaResult("",5);
         }
+    }
+
+    public class SibalaResult
+    {
+        public readonly string type;
+        public readonly int value;
+
+        public SibalaResult(string type,int value)
+        {
+            this.type = type;
+            this.value = value;
+        }
+
     }
 }
