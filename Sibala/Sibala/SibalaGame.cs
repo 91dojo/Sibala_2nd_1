@@ -15,6 +15,9 @@ namespace Sibala
 
         }
 
-
+        public object GetResult()
+        {
+            return null;
+        }
     }
 }
